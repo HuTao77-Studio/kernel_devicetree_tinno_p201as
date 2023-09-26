@@ -1,0 +1,49 @@
+
+qcom,tinno-3900mah-wk {
+	/* #3432559_Tinno_p201as_3900mAh_averaged_MasterSlave_Jun26th2017*/
+	qcom,max-voltage-uv = <4400000>;
+	qcom,nom-batt-capacity-mah = <3900>;
+	qcom,batt-id-kohm = <47>;
+	qcom,battery-beta = <3435>;
+	qcom,battery-type = "tinno-p201as-3900mah-wk-szdata_case3432559";
+	qcom,chg-rslow-comp-c1 = <3494593>;
+	qcom,chg-rslow-comp-c2 = <4939028>;
+	qcom,chg-rs-to-rslow = <842487>;
+	qcom,chg-rslow-comp-thr = <0xA5>;
+	qcom,checksum = <0x6CD8>;
+	qcom,gui-version = "PMI8950GUI - 2.0.0.16";
+	qcom,fg-profile-data = [
+         05 88 EC 7D
+         AD 81 00 7C
+         3F 83 34 72
+         C4 7D D1 7A
+         FC 81 E8 9A
+         FC BD 14 CB
+         86 12 03 88
+         A3 7D A0 81
+         22 7C 37 83
+         50 79 C7 86
+         4D 83 27 82
+         23 9B 4E BF
+         2B D1 71 0F
+         3A 0F 8D 5A
+         14 70 29 FC
+         1D 34 42 44
+         00 00 00 00
+         AD 4C 27 39
+         AF 41 00 00
+         00 00 00 00
+         00 00 00 00
+         B7 6B 83 69
+         20 8D 92 71
+         AC 7C CA 71
+         7F 74 01 79
+         51 76 A5 6A
+         6D 67 D1 A2
+         21 05 60 82
+         5D A0 71 0C
+         28 00 FF 36
+         F0 11 30 03
+         00 00 00 0C
+	];
+};
