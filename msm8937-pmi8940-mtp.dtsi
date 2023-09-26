@@ -28,7 +28,7 @@
 
 /{
 	mtp_batterydata: qcom,battery-data {
-		qcom,batt-id-range-pct = <15>;
+		qcom,batt-id-range-pct = <50>;
 		#include "batterydata-tinno-3900mah-4400mv.dtsi"
 	};
 };
