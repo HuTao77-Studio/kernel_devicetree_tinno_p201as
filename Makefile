@@ -1,4 +1,4 @@
-dtb-$(CONFIG_ARCH_MSM8937) += msm8937-pmi8940-mtp.dtb
+dtb-$(CONFIG_ARCH_MSM8937) += msm8937-pmi8940-mtp-p201as.dtb
 
 ifeq ($(CONFIG_ARM64),y)
 always          := $(dtb-y)
