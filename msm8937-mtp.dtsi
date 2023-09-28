@@ -271,25 +271,6 @@
 //	qcom,platform-bklight-en-gpio = <&tlmm 98 0>;
 };
 
-&dsi_truly_1080_vid {
-	qcom,panel-supply-entries = <&dsi_panel_pwr_supply>;
-	qcom,mdss-dsi-pan-enable-dynamic-fps;
-	qcom,mdss-dsi-pan-fps-update = "dfps_immediate_porch_mode_vfp";
-};
-
-&dsi_truly_1080_cmd {
-	qcom,panel-supply-entries = <&dsi_panel_pwr_supply>;
-	qcom,ulps-enabled;
-	qcom,partial-update-enabled;
-	qcom,panel-roi-alignment = <2 2 4 2 1080 2>;
-};
-
-&dsi_truly_720_vid {
-	qcom,panel-supply-entries = <&dsi_panel_pwr_supply>;
-	qcom,mdss-dsi-pan-enable-dynamic-fps;
-	qcom,mdss-dsi-pan-fps-update = "dfps_immediate_porch_mode_vfp";
-};
-
 &dsi_ft8613_720_1440p_vid {
 	qcom,panel-supply-entries = <&dsi_panel_pwr_supply>;
 };
