@@ -60,6 +60,20 @@
 		};
 	};
 
+		//wangyanhui add hall ic
+	hall-ic{//yangliang add for hall sensor;20150902
+		compatible = "hall-switch";
+		//pinctrl-names = "default";
+		//pinctrl-0 = <&hall_sensor_int_default>;
+		interrupt-parent = <&tlmm>;
+		interrupts = <45 0x0>;
+		vddio-supply = <&pm8937_l6>;
+		linux,gpio-int = <&tlmm 45 0x1>;
+		linux,wakeup;
+		linux,min-uv = <1800000>;
+		linux,max-uv = <1800000>;
+	};
+	
 	hbtp {
 		compatible = "qcom,hbtp-input";
 		vcc_dig-supply = <&pm8937_l5>;
