@@ -14,7 +14,18 @@
 &int_codec {
 	status = "okay";
 	qcom,model = "msm8952-snd-card-mtp";
-	qcom,msm-hs-micbias-type = "external";
+	//wangyanhui modify start
+	qcom,msm-mbhc-hphl-swh = <1>;
+	qcom,msm-mbhc-gnd-swh = <0>;
+	qcom,msm-hs-micbias-type = "internal";
+	qcom,msm-micbias1-ext-cap;
+	qcom,msm-spk-ext-pa-mode = <3>;
+	qcom,tinno_mbhc_keycode = <226 115 114 0 0 0 0 0>;
+	qcom,tinno_mbhc_btn_high = <110 300 480 500 500>;
+	qcom,tinno_mbhc_btn_low = <110 300 480 500 500>;
+	qcom,msm-spk-ext-pa = <&tlmm 48 0>;
+	//wangyanhui modify end
+	qcom,msm-spk-ext-pa-compatible = <&tlmm 89 0>;///yangliang add for pa compatible for 7201-20160112
 };
 
 &pm8937_cajon_dig {
