@@ -35,6 +35,11 @@
 
 &pmi8940_fg {
 	qcom,battery-data = <&mtp_batterydata>;
+	qcom,cold-bat-decidegc = <(30)>;
+	qcom,cool-bat-decidegc = <(170)>;
+	qcom,hot-bat-decidegc = <570>;
+	qcom,warm-bat-decidegc = <430>;	
+	qcom,bad-battery-detection-enable;
 };
 
 &pmi8940_charger {
