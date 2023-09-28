@@ -629,6 +629,24 @@
 			};
 		};
 
+//TINNO BEGIN
+//DATE20171103, Added For ELAN FP By qiao.li,IAAO-141
+		tlmm_gpio_fpid {
+			gpio_fpid_active: gpio_fpid_active {
+				mux {
+					pins = "gpio16";
+					function = "gpio";
+				};
+
+				config {
+					pins = "gpio16";
+					drive-strength = <2>;
+					bias-disable;
+				};
+			};
+		};
+//TINNO END
+
 		tlmm_gpio_key {
 			gpio_key_active: gpio_key_active {
 				mux {

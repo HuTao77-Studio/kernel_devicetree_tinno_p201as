@@ -69,6 +69,28 @@
 	status = "ok";
 };
 
+//TINNO BEGIN
+//DATE20171103, Added For ELAN FP By qiao.li,IAAO-141
+&soc {
+	qcom_fp{
+		status = "ok";
+		compatible = "qcom,fingerprint";
+		vdd-supply = <&pm8937_l10>;
+		vio-supply = <&pm8937_l6>;
+		reg = <0>;
+		interrupt-parent = <&tlmm>;
+		interrupts = <17 0x1>;
+		qcom,fpid-gpio = <&tlmm 16 0x00>;
+		qcom,irq-gpio = <&tlmm 17 0x00>;
+		qcom,reset-gpio = <&tlmm 19 0x00>;
+		pinctrl-names = "tlmm_gpio_fpid_active";
+		pinctrl-0 = <&gpio_fpid_active>;
+		spi-max-frequency = <8000000>;
+		fp-chip-elan96sa;
+	};
+};
+//TINNO END
+
 #include "msm8937-mdss-panels.dtsi"
 
 &mdss_mdp {
