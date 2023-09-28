@@ -59,7 +59,10 @@
 		other_ext_mem: other_ext_region@0 {
 			compatible = "removed-dma-pool";
 			no-map;
-			reg = <0x0 0x85b00000 0x0 0xd00000>;
+                        //TINNO BEGIN
+                        //DATE20171103, Modified For ELAN FP By qiao.li,IAAO-141
+			reg = <0x0 0x84A00000 0x0 0x1E00000>;
+                        //TINNO END
 		};
 
 		modem_mem: modem_region@0 {
@@ -1551,10 +1554,17 @@
 				"iface_clk", "bus_clk";
 		qcom,ce-opp-freq = <100000000>;
 	};
-
-	qcom_seecom: qseecom@85b00000 {
+        //TINNO BEGIN
+        //DATE20171103, Modified For ELAN FP By qiao.li,IAAO-141
+	//qcom_seecom: qseecom@85b00000 {
+        qcom_seecom: qseecom@84A00000{
+        //TINNO END
 		compatible = "qcom,qseecom";
-		reg = <0x85b00000 0x800000>;
+                //TINNO BEGIN
+                //DATE20171103, Modified For ELAN FP By qiao.li,IAAO-141
+		//reg = <0x85b00000 0x800000>;
+                reg = <0x84A00000 0x1900000>;
+                //TINNO END
 		reg-names = "secapp-region";
 		qcom,hlos-num-ce-hw-instances = <1>;
 		qcom,hlos-ce-hw-instance = <0>;
