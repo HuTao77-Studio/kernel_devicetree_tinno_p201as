@@ -15,14 +15,15 @@
 
 &int_codec {
 	qcom,model = "msm8952-snd-card-mtp";
-
-	qcom,cdc-us-euro-gpios = <&tlmm 63 0>;
+	//++ TN:luzhihua
+	//qcom,cdc-us-euro-gpios = <&tlmm 63 0>;
+	//-- TN:luzhihua
 	qcom,msm-mbhc-hphl-swh = <0>;
 	qcom,msm-mbhc-gnd-swh = <0>;
 	qcom,msm-hs-micbias-type = "external";
 	qcom,msm-micbias1-ext-cap;
 
-	qcom,hdmi-dba-codec-rx;
+	//qcom,hdmi-dba-codec-rx; //remove TN:luzhihua 
 
 	qcom,msm-gpios =
 		"pri_i2s",
