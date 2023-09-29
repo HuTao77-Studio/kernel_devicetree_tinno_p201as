@@ -394,11 +394,30 @@
 			qcom,ibat-polling-delay-ms = <100>;
 		};
 
+// pony.ma, DATE20170222, pwm mode config for green blink, DATE20170222-01 START
 		qcom,leds@a100 {
 			compatible = "qcom,leds-qpnp";
 			reg = <0xa100 0x100>;
+                        status = "okay";
+                        qcom,led_mpp_2 {
 			label = "mpp";
+                        linux,name = "green"; 
+                        linux,default-trigger = "none"; 
+                        qcom,default-state = "off"; 
+                        qcom,max-current = <40>; 
+                        qcom,current-setting = <10>; 
+                        qcom,id = <6>; 
+                        qcom,mode = "pwm"; 
+                        qcom,source-sel = <8>; 
+                        qcom,mode-ctrl = <0x60>; 
+                        qcom,pwm-channel = <0>;
+			qcom,pwm-us = <5000000>;
+                        pwms = <&pmi8940_pwm 0 0>; 
+                        pwm-names="green"; // add this
+			qcom,use-blink;
+                                         };
 		};
+// pony.ma, DATE20170222-01 END
 	};
 
 	qcom,pmi8940@3 {
@@ -406,15 +425,21 @@
 		reg = <0x3>;
 		#address-cells = <1>;
 		#size-cells = <1>;
-
+		status = "okay"; 
 		pmi8940_pwm: pwm@b000 {
-			status = "disabled";
 			compatible = "qcom,qpnp-pwm";
 			reg = <0xb000 0x100>;
 			reg-names = "qpnp-lpg-channel-base";
 			qcom,channel-id = <0>;
 			qcom,supported-sizes = <6>, <9>;
+			qcom,period = <1000000>;
+                        qcom,dtest-line = <1>; 
+                        qcom,dtest-output = <1>; 
 			#pwm-cells = <2>;
+                        qcom,pwm { 
+				qcom,duty = <500000>; //PWM duty time in microseconds
+                        label = "pwm"; 
+                        }; 
 		};
 
 		labibb: qpnp-labibb-regulator {
@@ -515,7 +540,8 @@
 			qcom,fs-curr-ua = <20000>;
 			qcom,en-phase-stag;
 			qcom,led-strings-list = [00 01];
-			qcom,en-ext-pfet-sc-pro;
+// pony.ma, DATE20170222, pwm mode config for green blink, DATE20170222-01 LINE
+			//qcom,en-ext-pfet-sc-pro;
 			qcom,cons-sync-write-delay-us = <1000>;
 		};
 
@@ -608,10 +634,10 @@
 			qcom,pmic-revid = <&pmi8940_revid>;
 			vcc_pon-supply = <&pon_perph_reg>;
 			qcom,play-mode = "direct";
-			qcom,wave-play-rate-us = <5263>;
-			qcom,actuator-type = "lra";
+			qcom,wave-play-rate-us = <4165>;
+			qcom,actuator-type = "erm";
 			qcom,wave-shape = "square";
-			qcom,vmax-mv = <2000>;
+			qcom,vmax-mv = <3000>;
 			qcom,ilim-ma = <800>;
 			qcom,sc-deb-cycles = <8>;
 			qcom,int-pwm-freq-khz = <505>;
@@ -622,11 +648,11 @@
 			qcom,wave-samples = [3e 3e 3e 3e 3e 3e 3e 3e];
 			qcom,wave-rep-cnt = <1>;
 			qcom,wave-samp-rep-cnt = <1>;
-			qcom,lra-auto-res-mode="qwd";
-			qcom,lra-high-z="opt1";
-			qcom,lra-res-cal-period = <4>;
-			qcom,correct-lra-drive-freq;
-			qcom,misc-trim-error-rc19p2-clk-reg-present;
+			//qcom,lra-auto-res-mode="qwd";
+			//qcom,lra-high-z="opt1";
+			//qcom,lra-res-cal-period = <4>;
+			//qcom,correct-lra-drive-freq;
+			//qcom,misc-trim-error-rc19p2-clk-reg-present;
 		};
 	};
 };
