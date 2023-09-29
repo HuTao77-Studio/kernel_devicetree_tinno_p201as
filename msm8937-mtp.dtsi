@@ -73,14 +73,6 @@
 		linux,min-uv = <1800000>;
 		linux,max-uv = <1800000>;
 	};
-	
-	hbtp {
-		compatible = "qcom,hbtp-input";
-		vcc_dig-supply = <&pm8937_l5>;
-		qcom,dig-load = <15000>;
-		qcom,dig-vtg-min = <1800000>;
-		qcom,dig-vtg-max = <1800000>;
-	};
 };
 
 &blsp1_uart2 {
@@ -161,6 +153,14 @@
 		pinctrl-0 = <&gpio_fpid_active>;
 		spi-max-frequency = <8000000>;
 		fp-chip-elan96sa;
+	};
+
+	hbtp {
+		compatible = "qcom,hbtp-input";
+		vcc_dig-supply = <&pm8937_l5>;
+		qcom,dig-load = <15000>;
+		qcom,dig-vtg-min = <1800000>;
+		qcom,dig-vtg-max = <1800000>;
 	};
 };
 //TINNO END
@@ -246,12 +246,12 @@
 };
 
 &mdss_dsi0 {
+	qcom,irq-te-tinno-vio = <&tlmm 24 0>;
 	qcom,dsi-pref-prim-pan = <&dsi_ft8613_720_1440p_vid>;
 	pinctrl-names = "mdss_default", "mdss_sleep";
 	pinctrl-0 = <&mdss_dsi_active &mdss_te_active>;
 	pinctrl-1 = <&mdss_dsi_suspend &mdss_te_suspend>;
 
-	qcom,irq-te-tinno-vio = <&tlmm 24 0>;
 //	qcom,platform-te-gpio = <&tlmm 24 0>;
 	qcom,platform-enable-gpio = <&tlmm 68 0>;
 	qcom,platform-reset-gpio = <&tlmm 60 0>;

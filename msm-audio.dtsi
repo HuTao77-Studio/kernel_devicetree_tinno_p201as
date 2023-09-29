@@ -421,6 +421,15 @@
 				"msm-dai-q6-dev.241", "msm-dai-q6-dev.240",
 				"msm-dai-q6-dev.32771", "msm-dai-q6-dev.32772",
 				"msm-dai-q6-dev.32773", "msm-dai-q6-dev.32770";
+	    qcom,msm-spk-ext-pa-mode = <3>;
+	    qcom,tinno_mbhc_keycode = <226 115 114 0 0 0 0 0>;
+	    qcom,tinno_mbhc_btn_high = <110 300 480 500 500>;
+	    qcom,tinno_mbhc_btn_low = <110 300 480 500 500>;
+		asoc-codec = <&stub_codec>, <&hdmi_dba>;
+	    asoc-codec-names = "msm-stub-codec.1", "msm-hdmi-dba-codec-rx";
+	    qcom,msm-spk-ext-pa = <&tlmm 48 0>;
+	    //wangyanhui modify end
+	    qcom,msm-spk-ext-pa-compatible = <&tlmm 89 0>;///yangliang add for pa compatible for 7201-20160112
 	};
 
 	ext_codec: sound-9335 {

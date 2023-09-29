@@ -39,7 +39,6 @@
 	eeprom0: qcom,eeprom@0 {
 		cell-index = <0>;
 		compatible = "qcom,eeprom";
-		qcom,cci-master = <0>;
 		reg = <0x0>;
 		cam_vdig-supply = <&pm8937_l23>;
 		//cam_vana-supply = <&pm8937_l22>;
@@ -69,6 +68,7 @@
 			"CAM_RESET0",
 			"CAM_STANDBY0",
 			"CAM_VANA0";
+		qcom,cci-master = <0>;
 		status = "ok";
 		clocks = <&clock_gcc clk_mclk0_clk_src>,
 				<&clock_gcc clk_gcc_camss_mclk0_clk>;
@@ -78,9 +78,8 @@
 
 	eeprom2: qcom,eeprom@2 {
 		cell-index = <2>;
-		compatible = "qcom,eeprom";
-		qcom,cci-master = <1>;
 		reg = <0x2>;
+		compatible = "qcom,eeprom";
 		cam_vdig-supply = <&pm8937_l23>;
 		//cam_vana-supply = <&pm8937_l22>;
 		cam_vio-supply = <&pm8937_l6>;
@@ -109,6 +108,7 @@
 					  "CAM_RESET2",
 					  "CAM_STANDBY2",
 					  "CAM_VANA2";
+		qcom,cci-master = <1>;
 		status = "ok";
 		clocks = <&clock_gcc clk_mclk2_clk_src>,
 			 <&clock_gcc clk_gcc_camss_mclk2_clk>;
