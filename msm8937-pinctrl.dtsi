@@ -71,12 +71,12 @@
 			i2c_2_active: i2c_2_active {
 				/* active state */
 				mux {
-					pins = "gpio6", "gpio7";
+					pins = "gpio8", "gpio7";
 					function = "blsp_i2c2";
 				};
 
 				config {
-					pins = "gpio6", "gpio7";
+					pins = "gpio8", "gpio7";
 					drive-strength = <2>;
 					bias-disable;
 				};
@@ -85,12 +85,12 @@
 			i2c_2_sleep: i2c_2_sleep {
 				/* suspended state */
 				mux {
-					pins = "gpio6", "gpio7";
+					pins = "gpio8", "gpio7";
 					function = "gpio";
 				};
 
 				config {
-					pins = "gpio6", "gpio7";
+					pins = "gpio8", "gpio7";
 					drive-strength = <2>;
 					bias-disable;
 				};
