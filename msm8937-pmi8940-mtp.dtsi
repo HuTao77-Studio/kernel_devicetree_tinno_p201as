@@ -27,6 +27,12 @@
 };
 
 /{
+	tinno_misc: tinno_misc_drv {
+		compatible = "qcom,log-ctrl";
+	};
+};
+
+/{
 	mtp_batterydata: qcom,battery-data {
 		qcom,batt-id-range-pct = <50>;
 		#include "batterydata-tinno-3900mah-4400mv.dtsi"
