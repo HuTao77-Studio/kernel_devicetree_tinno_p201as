@@ -175,17 +175,28 @@
 			#size-cells = <1>;
 
 			qcom,usbin-vadc = <&pmi8940_vadc>;     // pony.ma, DATE20171214, add input voltage log, DATE20171214-01 LINE
-			qcom,iterm-ma = <100>;
-			qcom,float-voltage-mv = <4200>;
+			qcom,float-voltage-mv = <4400>;
+			// pony.ma, DATE20171010, Define project battery capacity for 3rd apk, DATE20171010-01 LINE
+			qcom,tinno-battery-capacity = <3900>;
+			qcom,weak-charger-enable = <1>;
 			qcom,resume-delta-mv = <200>;
+			qcom,fastchg-current-ma = <1800>;		    
 			qcom,chg-inhibit-fg;
 			qcom,rparasitic-uohm = <100000>;
 			qcom,bms-psy-name = "bms";
-			qcom,thermal-mitigation = <1500 700 600 0>;
+			qcom,thermal-mitigation = <1800 1200 1000 0>;
 			qcom,pmic-revid = <&pmi8940_revid>;
 			qcom,force-aicl-rerun;
 			qcom,aicl-rerun-period-s = <180>;
-			qcom,autoadjust-vfloat;
+			qcom,float-voltage-comp = <16>;
+			qcom,fastchg-current-comp = <700>; //700ma
+			//LINE<REQ><><DEFUALT USB DCP ICL SET TO 1400MA><20160708>huiyong.yin
+			qcom,no-parallel-defualt-dcp-icl-ma = <1800>;
+			qcom,no_support_qc;//<20160720><don't support qc>wangyanhui add 
+			// pony.ma, DATE20160902, HCADCNA-317, insert SDP and restart, do not set usb il, DATE20160902-01 LINE
+			qcom,override-usb-current;
+			qcom,speed-current = <1800 1400 1200 1100 900 700 600 450 400 0>;
+
 
 			qcom,chgr@1000 {
 				reg = <0x1000 0x100>;
