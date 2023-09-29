@@ -54,6 +54,12 @@
 		#size-cells = <2>;
 		ranges;
 
+		pstore_mem: pstore_region@0 {
+			compatible = "removed-dma-pool";
+			no-map-fixup;
+			reg = <0x0 0x9FF00000 0x0 0x100000>;
+		};
+
 		other_ext_mem: other_ext_region@0 {
 			compatible = "removed-dma-pool";
 			no-map;
