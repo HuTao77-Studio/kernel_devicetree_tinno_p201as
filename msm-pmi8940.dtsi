@@ -298,17 +298,26 @@
 			compatible = "qcom,qpnp-fg";
 			#address-cells = <1>;
 			#size-cells = <1>;
+			qcom,fg-cc-cv-threshold-mv = <4390>;          //---pony
+			qcom,vbat-estimate-diff-mv =<200>;            //VCIFGCE-367 resolve soc inaccurate
 			qcom,resume-soc = <95>;
 			status = "okay";
 			qcom,bcl-lm-threshold-ma = <127>;
 			qcom,bcl-mh-threshold-ma = <405>;
-			qcom,fg-iterm-ma = <150>;
-			qcom,fg-chg-iterm-ma = <100>;
+			qcom,fg-iterm-ma = <200>;
+			qcom,fg-chg-iterm-ma = <150>;
 			qcom,pmic-revid = <&pmi8940_revid>;
-			qcom,fg-cutoff-voltage-mv = <3500>;
+			qcom,fg-cutoff-voltage-mv = <3400>;
 			qcom,cycle-counter-en;
-			qcom,capacity-learning-on;
+			qcom,ext-sense-type;
+			qcom,cold-hot-jeita-hysteresis = <0 0>;//add by lijian
 
+//Battery NTC is 3435K ,But we choose 3440K,becuse Tinno's test method  is not rigorous.
+//NTC            C1                C2              C3
+//b3440 -3.3802  86C2  0.036987   50BB -0.00381  37CF
+			qcom,thermal-coefficients =[c2 86 bb 50 cf 37];
+			qcom,capacity-learning-on;
+			qcom,hold-soc-while-full;
 			qcom,fg-soc@4000 {
 			status = "okay";
 				reg = <0x4000 0x100>;
