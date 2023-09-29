@@ -24,6 +24,7 @@
 				<GIC_SPI 232 IRQ_TYPE_LEVEL_HIGH>,
 				<GIC_SPI 233 IRQ_TYPE_LEVEL_HIGH>,
 				<GIC_SPI 234 IRQ_TYPE_LEVEL_HIGH>;
+		qcom,deferred-regulator-disable-delay = <80>;
 		qcom,dynamic;
 		qcom,use-3-lvl-tables;
 		qcom,enable-smmu-halt;
