@@ -1514,12 +1514,12 @@
 		cam_sensor_front1_default: cam_sensor_front1_default {
 			/* RESET, STANDBY */
 			mux {
-				pins = "gpio40", "gpio39";
+				pins = "gpio40", "gpio6";
 				function = "gpio";
 			};
 
 			config {
-				pins = "gpio40", "gpio39";
+				pins = "gpio40", "gpio6";
 				bias-disable; /* No PULL */
 				drive-strength = <2>; /* 2 MA */
 			};
@@ -1528,12 +1528,12 @@
 		cam_sensor_front1_sleep: cam_sensor_front1_sleep {
 			/* RESET, STANDBY */
 			mux {
-				pins = "gpio40", "gpio39";
+				pins = "gpio40", "gpio6";
 				function = "gpio";
 			};
 
 			config {
-				pins = "gpio40", "gpio39";
+				pins = "gpio40", "gpio6";
 				bias-disable; /* No PULL */
 				drive-strength = <2>; /* 2 MA */
 			};
