@@ -1732,5 +1732,33 @@
 				drive-strength = <2>; /* 2 MA */
 			};
 		};
+
+		cam_sensor_front_vana: cam_sensor_front_vana {
+			/* VANA */
+			mux {
+				pins = "gpio8";
+				function = "gpio";
+			};
+
+			config {
+				pins = "gpio8";
+				bias-disable; /* No PULL */
+				drive-strength = <2>; /* 2 MA */
+			};
+		};
+
+		cam_sensor_front_vana_sleep: cam_sensor_front_vana_sleep {
+			/* VANA */
+			mux {
+				pins = "gpio8";
+				function = "gpio";
+			};
+
+			config {
+				pins = "gpio8";
+				bias-disable; /* No PULL */
+				drive-strength = <2>; /* 2 MA */
+			};
+		};
 	};
 };
