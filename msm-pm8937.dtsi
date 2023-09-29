@@ -43,6 +43,7 @@
 				linux,code = <116>;
 				qcom,support-reset = <1>;	//caizhifu add for support reset,2016-11-18
 				qcom,s1-timer = <6720>;		//caizhifu add reset time about 7s,2016-11-18
+				qcom,s2-timer = <250>;		//caizhifu add s2 timer for 250,2016-11-18
 			};
 
 			qcom,pon_2 {
