@@ -133,7 +133,7 @@
 		smd21 = &smdtty_data21;
 		smd36 = &smdtty_loopback;
 		i2c2 = &i2c_2;
-		i2c5 = &i2c_5;
+		//i2c5 = &i2c_5;
 		spi3 = &spi_3;
 		sdhc1 = &sdhc_1; /* SDC1 eMMC slot */
 		sdhc2 = &sdhc_2; /* SDC2 for SD card */
