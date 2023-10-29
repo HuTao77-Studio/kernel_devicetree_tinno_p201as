@@ -76,7 +76,7 @@
 				"WSA_SPK OUT", "VDD_WSA_SWITCH",
 				"SpkrMono WSA_IN", "WSA_SPK OUT";
 
-		qcom,cdc-us-euro-gpios = <&tlmm 63 0>;
+		//qcom,cdc-us-euro-gpios = <&tlmm 63 0>; //remove TN:luzhihua 
 		qcom,cdc-us-eu-gpios = <&cdc_us_euro_sw>;
 		qcom,pri-mi2s-gpios = <&cdc_pri_mi2s_gpios>;
 		qcom,quin-mi2s-gpios = <&cdc_quin_mi2s_gpios>;
