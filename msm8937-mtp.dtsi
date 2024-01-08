@@ -172,17 +172,6 @@
 	};
 };
 
-&pm8937_gpios {
-	nfc_clk {
-		nfc_clk_default: nfc_clk_default {
-			pins = "gpio5";
-			function = "normal";
-			input-enable;
-			power-source = <1>;
-		};
-	};
-};
-
 &i2c_3{
 	focaltech@38 {
 		compatible = "focaltech,fts";
