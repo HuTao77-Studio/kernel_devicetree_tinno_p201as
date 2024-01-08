@@ -415,7 +415,7 @@
 				qcom,mode-ctrl = <0x60>;
 				qcom,pwm-channel = <0>;
 				qcom,pwm-us = <5000000>;
-				pwms = <&pmi8940_pwm 0 0>;
+				pwms = <&pmi8950_pwm 0 0>;
 				pwm-names="green"; // pwm mode config for green blink
 				qcom,use-blink;
 			};
